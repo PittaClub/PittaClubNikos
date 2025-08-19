@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Pitta Club NIKOS | Sivota – Souvlaki & Gyros | Restaurant & Street Food</title>
+
+  <meta name="description" content="Pita is always a good idea – especially at Pitta Club NIKOS! The best souvlaki, gyros & pita in Sivota. Authentic Greek street food – see our menu." />
+  <!-- Προαιρετικό: keywords βοηθούν σε μικρότερες μηχανές -->
+  <meta name="keywords" content="souvlaki sivota, souvlaki syvota, gyros sivota, gyros syvota, greek street food sivota, greek restaurant sivota, pitta club nikos, pita club nikos, nikos pita club, pitta club nikos sivota, authentic greek food, pita wraps, souvlaki skewers, pork gyros, chicken gyros, pita bread, tzatziki, fast casual greek, street food restaurant, dine-in sivota, takeaway sivota, thesprotia, epirus greece, menu pdf, best souvlaki in sivota" />
+  <!-- Robots / rich snippets limits -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <!-- Mobile UI tint -->
+  <meta name="theme-color" content="#111111" />
+
+  <link rel="canonical" href="https://pittaclubnikos.com/index-en.html" />
+
+  <!-- hreflang (Localization SEO) -->
+  <link rel="alternate" href="https://pittaclubnikos.com/" hreflang="el" />
+  <link rel="alternate" href="https://pittaclubnikos.com/index-en.html" hreflang="en" />
+  <link rel="alternate" href="https://pittaclubnikos.com/" hreflang="x-default" />
+
+  <!-- Open Graph (Restaurant - EN) -->
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:title" content="Pitta Club NIKOS | Sivota – Souvlaki & Gyros" />
+  <meta property="og:description" content="The best souvlaki & gyros in Sivota – authentic Greek street food since 1987. See our menu!" />
+  <meta property="og:url" content="https://pittaclubnikos.com/index-en.html" />
+  <meta property="og:site_name" content="Pitta Club NIKOS" />
+  <meta property="og:image" content="https://pittaclub.github.io/PittaClubNikos/assets/img/share_pre.jpg" /> <!-- TODO: change to pittaclubnikos.com -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="el_GR" />
+
+  <!-- Restaurant-specific OG -->
+  <meta property="restaurant:price_range" content="€" />
+  <meta property="restaurant:contact_info:street_address" content="Syvota" />
+  <meta property="restaurant:contact_info:locality" content="Syvota" />
+  <meta property="restaurant:contact_info:region" content="Thesprotia" />
+  <meta property="restaurant:contact_info:postal_code" content="46100" />
+  <meta property="restaurant:contact_info:country_name" content="Greece" />
+  <meta property="restaurant:contact_info:phone_number" content="+302665093369" />
+  <meta property="restaurant:contact_info:website" content="https://pittaclubnikos.com/" />
+  <meta property="restaurant:menu" content="https://pittaclubnikos.com/assets/PittaClubMenu.pdf" />
+
+  <!-- Optional place coordinates -->
+  <meta property="place:location:latitude" content="39.40667448373198" />
+  <meta property="place:location:longitude" content="20.240042202281643" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pitta Club NIKOS | Sivota – Souvlaki & Gyros" />
+  <meta name="twitter:description" content="The best souvlaki & gyros in Sivota! Menu, location, contact." />
+  <meta name="twitter:image" content="https://pittaclub.github.io/PittaClubNikos/assets/img/share_pre.jpg" /> <!-- TODO -->
+
+  <!-- Favicon & Apple -->
+  <link rel="icon" href="assets/img/PittaClub_Logo.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/img/PittaClub_Logo.png" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Fix for mobile viewport height (τρέχει ΠΡΩΤΟ, χωρίς defer/async) -->
+  <link rel="preload" href="./js/set-app-height.js" as="script">
+  <script src="./js/set-app-height.js"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Performance: προφόρτωση βασικών εικόνων (προσαρμοσέ τα paths αν θες) -->
+  <link rel="preload" as="image" href="assets/img/about-desktop.jpg" imagesrcset="assets/img/about-mobile.jpg 768w, assets/img/about-desktop.jpg 1440w" imagesizes="(max-width: 768px) 100vw, 1440px" />
+  <link rel="preload" as="image" href="assets/img/LogoSouvlaki.png" />
+
+  <!-- CSS swiper -->
+  <link rel="stylesheet" href="./swiper/swiper-bundle.min.css" />
+
+  <!-- JS swiper -->
+  <script src="./swiper/swiper-bundle.min.js" defer></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JS -->
+  <script defer src="js/script.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Pitta Club NIKOS",
+    "url": "https://pittaclubnikos.com/index-en.html",
+    "image": "https://pittaclubnikos.com/assets/img/share_pre.jpg",
+    "servesCuisine": ["Greek","Street Food","Gyros","Souvlaki","Pita"],
+    "priceRange": "€",
+    "telephone": "+30 2665 093369",
+    "sameAs": [
+      "https://www.instagram.com/pittaclubnikos",
+      "https://www.facebook.com/pitta.club.nikos"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Syvota",
+      "addressLocality": "Syvota",
+      "addressRegion": "Thesprotia",
+      "postalCode": "46100",
+      "addressCountry": "GR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.40667448373198,
+      "longitude": 20.240042202281643
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "17:00",
+      "closes": "01:00"
+    }],
+    "acceptsReservations": false,
+    "hasMenu": {
+      "@type": "Menu",
+      "url": "https://pittaclubnikos.com/assets/PittaClubMenu.pdf"
+    },
+    "foundingDate": "1987"
+  }
+  </script>
+
+</head>
+
+<body class="loading">
+
+  <div class="background"></div>
+
+  <!-- ========================= HEADER ========================= -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="#hero" class="brand">
+        <img src="assets/img/LogoSouvlaki.png" alt="Pitta Club NIKOS logo" class="logo" decoding="async" />
+          Pitta Club <span class="nikos">NIKOS</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About Us</a>
+        <a href="#gallery">Photo Gallery</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="index.html" class="lang-switch">GR</a>
+        <button class="burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- ========================= HERO ========================= -->
+  <section id="hero">
+    <div class="hero-inner">
+      <!-- TODO -->
+      <h1 id="site-title" class="visually-hidden">
+        Pitta Club NIKOS – Souvlaki &amp; Gyros in Sivota
+      </h1>
+      <a href="#menu" class="btn">See the Menu</a>
+    </div>
+  </section>
+
+<main class="main-content">
+
+<!-- About Section -->
+<section id="about">
+  <div class="spacer-hero-fix"></div>      <!-- Spacer -->
+  <div class="about-wrapper">
+    <div class="about-images">
+      <picture>
+        <source srcset="assets/img/about-mobile.jpg" media="(max-width: 768px)">
+        <img src="assets/img/about-desktop.jpg" alt="Nikos' souvlaki on Grill" loading="lazy" decoding="async">
+      </picture>
+
+      <div class="about-text">
+        <h2>About Us</h2>
+        
+        <p>
+          Since 1987, <strong>Pitta Club Nikos</strong> has been a go-to spot for visitors from all over the world who are looking for authentic Greek street food. With passion and consistency, we've been serving quick yet high-quality meals for decades—based on simple, honest recipes.
+            
+        </p>
+
+        <p>
+          On our traditional and carefully crafted menu, you'll find fluffy <strong>pitas</strong>, juicy <strong>gyros</strong> and <strong>souvlaki</strong>, burgers, refreshing salads, and classic Greek appetizers. Every bite reflects our love for flavor and Greek hospitality.
+            
+        </p>
+
+        <p>
+          Our guests appreciate not only the quality of our ingredients, but also our warm and welcoming service—even during the busiest hours. It's this dedication to taste and experience that keeps locals and travelers coming back, summer after summer.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Saperator -->
+  <div class="separator"></div>
+  
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+
+    <!-- Swiper -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-2.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-3.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-4.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-5.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-6.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-7.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-8.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('assets/img/placeholder-9.jpg')"></div>
+
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <!-- Saperator -->
+  <div class="separator"></div>
+
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <div class="container">
+      <h2>Menu</h2>
+      <div class="menu-card">
+        <!-- TODO : Icon PDF -->
+        <img src="assets/img/OUR_MENU.png" alt="Menu logo" class="menu-logo" loading="lazy" decoding="async">
+        <a href="assets/PittaClubMenu.pdf" class="btn" target="_blank">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Saperator -->
+  <div class="separator"></div>
+  
+  <!-- Location & Hours Section -->
+
+  <!-- Contact Section -->  
+  <section id="contact">
+    <div class="container">
+      <div>
+        <h2>Opening Hours & Location</h2>
+        <p><strong>Open daily:</strong> Monday – Sunday, 17:00 – 01:00</p>
+        <p><strong>Address:</strong> 
+          <a href="https://maps.google.com/?q=39.40667448373198,20.240042202281643" target="_blank" rel="noopener noreferrer">
+            Syvota 46100, Thesprotia, Greece
+          </a>
+        </p>
+        <p>You’ll find us in the heart of Syvota, just a short walk from the port!</p>
+      </div>
+      <!-- google maps link here -->
+      <iframe class="map" title="Pitta Club NIKOS location map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3082.77160808337!2d20.237467175815944!3d39.406672871619804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135c8156de607c19%3A0x94afc3851dcdfbdf!2sNikos%20Pita%20Club!5e0!3m2!1sel!2sgr!4v1752236701932!5m2!1sel!2sgr"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p><strong>Phone:</strong> <a href="tel:+302665093369">+30 2665 093369</a></p>
+      
+      <div class="socials">
+        <a href="https://www.instagram.com/pittaclubnikos" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="icon-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
+            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/pitta.club.nikos" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="icon-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24" fill="currentColor">
+            <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Sticky Call Button (mobile) -->
+  <a href="tel:+30 2665 093369" class="sticky-call" aria-label="Call">📞</a>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Pitta Club NIKOS. All rights reserved.</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
