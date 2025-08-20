@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   
   <!-- (Προαιρετικό αλλά συνιστάται) Consent Mode v2 defaults -->
-  <!-- <script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
@@ -15,7 +15,23 @@
       ad_personalization: 'denied',
       analytics_storage: 'denied'
     });
-  </script> -->
+  </script>
+
+  <!-- ΕΦΑΡΜΟΓΗ ΑΠΟΘΗΚΕΥΜΕΝΗΣ ΣΥΓΚΑΤΑΘΕΣΗΣ (πριν φορτώσει το gtag.js) -->
+  <script>
+    try {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      const saved = localStorage.getItem('pcn-consent-v1');
+      if (saved === 'granted') {
+        gtag('consent','update',{ analytics_storage:'granted' });
+        // Αν στο μέλλον χρησιμοποιήσεις Ads, εδώ πρόσθεσε και:
+        // ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted'
+      } else if (saved === 'denied') {
+        gtag('consent','update',{ analytics_storage:'denied' });
+      }
+    } catch(e) {}
+  </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-00E4HS98NQ"></script>
@@ -319,6 +335,86 @@
   </footer>
 
 </main>
+<!-- Cookie Banner (EL/EN) -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p id="cookie-text"></p>
+  <div class="cookie-actions">
+    <button id="cookie-accept" class="cookie-btn cookie-accept"></button>
+    <button id="cookie-reject" class="cookie-btn cookie-reject"></button>
+  </div>
+</div>
+
+<style>
+  .cookie-banner{
+    position:fixed;left:0;right:0;bottom:0;z-index:9999;
+    display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;
+    padding:.9rem 1rem;background:#111;color:#fff;border-top:1px solid #222;
+    font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  }
+  .cookie-actions{margin-left:auto;display:flex;gap:.5rem}
+  .cookie-btn{cursor:pointer;border-radius:8px;padding:.6rem .9rem}
+  .cookie-accept{border:none;background:#9ef59e;color:#0a0a0a;font-weight:600}
+  .cookie-reject{border:1px solid #555;background:#1e1e1e;color:#fff}
+  @media (prefers-reduced-motion:no-preference){
+    .cookie-banner{transition:transform .25s ease, opacity .25s ease}
+    .cookie-banner.hide{opacity:0;transform:translateY(10px);pointer-events:none}
+  }
+</style>
+
+<script>
+(function(){
+  const KEY = 'pcn-consent-v1';
+  const lang = (document.documentElement.lang || 'el').toLowerCase().startsWith('en') ? 'en' : 'el';
+  const t = {
+    el: {
+      text: 'Χρησιμοποιούμε cookies μόνο για στατιστικά (Google Analytics). Θέλεις να τα αποδεχτείς;',
+      accept: 'Αποδοχή',
+      reject: 'Απόρριψη'
+    },
+    en: {
+      text: 'We use cookies only for analytics (Google Analytics). Do you accept?',
+      accept: 'Accept',
+      reject: 'Reject'
+    }
+  };
+  const $b = document.getElementById('cookie-banner');
+  const $text = document.getElementById('cookie-text');
+  const $accept = document.getElementById('cookie-accept');
+  const $reject = document.getElementById('cookie-reject');
+
+  // Αν υπάρχει ήδη επιλογή, μην δείξεις banner
+  let saved = null;
+  try { saved = localStorage.getItem(KEY); } catch(e) {}
+  if (saved) { $b.classList.add('hide'); return; }
+
+  // Bάλε σωστά τα κείμενα
+  $text.textContent   = t[lang].text;
+  $accept.textContent = t[lang].accept;
+  $reject.textContent = t[lang].reject;
+
+  function hide(){ $b.classList.add('hide'); setTimeout(()=>{ $b.remove(); }, 300); }
+
+  // Accept → δίνουμε ΜΟΝΟ analytics_storage
+  $accept.addEventListener('click', function(){
+    try { localStorage.setItem(KEY, 'granted'); } catch(e){}
+    if (typeof gtag === 'function') {
+      gtag('consent','update',{ analytics_storage:'granted' });
+      // Αν προσθέσεις Google Ads/Remarketing στο μέλλον, τότε:
+      // gtag('consent','update',{ analytics_storage:'granted', ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted' });
+    }
+    hide();
+  });
+
+  // Reject → μένουμε στο denied
+  $reject.addEventListener('click', function(){
+    try { localStorage.setItem(KEY, 'denied'); } catch(e){}
+    if (typeof gtag === 'function') {
+      gtag('consent','update',{ analytics_storage:'denied' });
+    }
+    hide();
+  });
+})();
+</script>
 
 </body>
 </html>
