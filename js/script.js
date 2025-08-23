@@ -106,3 +106,31 @@ if (window.Swiper && document.querySelector('.swiper')) {
     },
   });
 }
+
+
+// Cache-bust for the menu PDF (ensures latest file without renaming)
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const selector = 'a[href$="assets/PittaClubMenu.pdf"]';
+    const links = document.querySelectorAll(selector);
+    if (!links.length) return;
+
+    (async () => {
+      let ver;
+      try {
+        const res = await fetch('assets/PittaClubMenu.pdf', { method: 'HEAD', cache: 'no-store' });
+        const lm = res.headers.get('last-modified');
+        ver = lm ? Date.parse(lm) : Date.now();
+      } catch(e) {
+        ver = Date.now();
+      }
+      links.forEach(a => {
+        try {
+          const url = new URL(a.getAttribute('href'), location.href);
+          url.searchParams.set('v', String(ver));
+          a.href = url.toString();
+        } catch(_) {}
+      });
+    })();
+  } catch(_) {}
+});
