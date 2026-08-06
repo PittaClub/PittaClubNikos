@@ -390,3 +390,5 @@
   /* ---------- Footer ---------- */
   footer {background: var(--dark); color: var(--light); padding: 2rem 1rem; text-align: center;}
   footer p {font-size: 0.875rem;}
+  footer .credit {font-size: 0.75rem; opacity: 0.6; margin-top: 0.35rem;}
+  footer .credit a:hover {text-decoration: underline; opacity: 1;}
